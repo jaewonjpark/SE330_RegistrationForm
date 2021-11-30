@@ -27,7 +27,8 @@ public class RegistrationForm extends Application
     {
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
-        gridPane.setPadding(new Insets(30, 30, 30, 30));
+        //Insets class stores the inside offsets for the four sides of the rectangular area
+        gridPane.setPadding(new Insets(30, 30, 30, 30)); //https://www.geeksforgeeks.org/javafx-insets-class/
         
         //gap between
         gridPane.setVgap(20);
@@ -90,7 +91,8 @@ public class RegistrationForm extends Application
         {
             @Override
             public void handle(ActionEvent event) 
-            { //if the text field is empty, then error
+            { 
+                //if the text field is empty, then error
                 if(nameField.getText().isEmpty()) {
                     showAlert(Alert.AlertType.ERROR, gridPane.getScene().getWindow(), "Error!", "Please enter your name");
                     return;
@@ -114,18 +116,18 @@ public class RegistrationForm extends Application
         });
     }
 
-    private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) 
+    private void showAlert(Alert.AlertType type, Window window, String title, String description) 
     {
         //https://www.geeksforgeeks.org/javafx-alert-with-examples/
-        Alert alert = new Alert(alertType);
+        Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.initOwner(owner);
+        alert.setContentText(description);
+        alert.initOwner(window);
         alert.show();
     }
     
-//    //Confirming if pw matches pw
+//    //Confirming if pw matches pw (Will continue after this semester)
 //    private boolean validatePassword()
 //    {
     
