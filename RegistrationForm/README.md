@@ -1,6 +1,5 @@
 # SE330_RegistrationForm
-# Jaewon Park
-# SE330 
+# Jaewon Park / SE330 
 
 ## Direction:
 1. Unzip dist folder
