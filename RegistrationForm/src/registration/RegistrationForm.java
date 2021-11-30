@@ -42,7 +42,7 @@ public class RegistrationForm extends Application
         return gridPane;
     }
 
-    private void UIButton(GridPane gridPane) 
+    private void UIButton(GridPane gridPane) //Adding UI controls to layout
     {
         //Header
         Label header = new Label("Registration Form");
@@ -85,6 +85,7 @@ public class RegistrationForm extends Application
         gridPane.add(submit, 0, 5, 2, 1);
         GridPane.setHalignment(submit, HPos.CENTER);
 
+        //Handler code of submit button
         submit.setOnAction(new EventHandler<ActionEvent>() //https://stackoverflow.com/questions/57074185/how-to-use-setonaction-event-on-javafx
         {
             @Override
@@ -107,6 +108,7 @@ public class RegistrationForm extends Application
                     return;
                 }
 
+                // Registration Successful! note is on top of pop up tab
                 showAlert(Alert.AlertType.CONFIRMATION, gridPane.getScene().getWindow(), "Registration Successful!", "Welcome " + nameField.getText());
             }
         });
@@ -114,6 +116,7 @@ public class RegistrationForm extends Application
 
     private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) 
     {
+        //https://www.geeksforgeeks.org/javafx-alert-with-examples/
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);
@@ -134,7 +137,7 @@ public class RegistrationForm extends Application
         primaryStage.setTitle("Registration Form"); //Title
         GridPane gridPane = formPane();
         UIButton(gridPane); //UI control
-        Scene scene = new Scene(gridPane, 800, 500);
+        Scene scene = new Scene(gridPane, 700, 400); 
         primaryStage.setScene(scene);
         primaryStage.show();
     }
