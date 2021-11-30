@@ -6,6 +6,6 @@ by Jaewon Park
 2. Open terminal
 3. java -jar "Registration.jar"
 
-#Reference
+# Reference
 1. https://stackoverflow.com/questions/57074185/how-to-use-setonaction-event-on-javafx
 2. https://www.geeksforgeeks.org/javafx-alert-with-examples/
